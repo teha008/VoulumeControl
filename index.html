@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="left-box">1</div>
+      <div class="right-box">2</div>
+      <div class="circle"></div>
+      <div class="line"></div>
+    </div>
+    <h4 class="box-vol">볼륨: <span>0</span></h4>
+  </body>
+
+  <script>
+
+    // 1. 박스 우측을 드래그하면
+
+    var element = document.querySelector('.right-box');
+    var 오른쪽박스 = new Hammer(element);
+    오른쪽박스.get('pan').set({ direction: Hammer.DIRECTION_ALL })
+
+    오른쪽박스.on('pandown', function (e) {
+      console.log(e.deltaY)
+    })
+
+    // 2. 박스가 우측으로 회전
+    // 3. 동그라미가 우측으로 이동(left: 드래그한양 px)
+    // 4. 근데 이동거리 180px 이하일 때만 우측으로 이동
+    // 5. 박스 원래대로 위치 복구
+  </script>
+</html>
