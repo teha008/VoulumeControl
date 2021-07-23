@@ -7,6 +7,8 @@
   z-index: 3;
   top: 9.5px;
   left: 5px;
+  transition: left 0.5s;
+  transition-timing-function: ease-out;
 }
 
 .box {
